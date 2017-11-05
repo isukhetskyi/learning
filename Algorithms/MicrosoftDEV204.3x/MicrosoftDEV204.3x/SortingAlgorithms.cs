@@ -50,5 +50,33 @@ namespace MicrosoftDEV2043x
 
             return unsortedArray;
         }
+
+        public static T[] InsertationSort<T>(T[] input, bool order = true) where T : IComparable
+        {
+            var unsortedArray = new T[input.Length];
+            Array.Copy(input, unsortedArray, input.Length);
+
+            for(int i = 1; i < unsortedArray.Length; i++)
+            {
+                T newValue = unsortedArray[i];
+                int j = i;
+
+                while(j > 0 && unsortedArray[j - 1].CompareTo(newValue) > 0 && order)
+                {
+                    unsortedArray[j] = unsortedArray[j - 1];
+                    j--;
+                }
+
+                while(j > 0 && unsortedArray[j - 1].CompareTo(newValue) < 0 && !order)
+                {
+                    unsortedArray[j] = unsortedArray[j - 1];
+                    j--;
+                }
+
+                unsortedArray[j] = newValue;
+            }
+
+            return unsortedArray;
+        }
     }
 }

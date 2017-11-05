@@ -9,8 +9,8 @@ namespace MicrosoftDEV2043x
             Console.WriteLine("Hello World!");
             int[] array = new int[]{3, 5, 2, 1, 1, 2, 8 };
 
-            var ascArray = SortingAlgorithms.BubbleSort(array);
-            var descArray = SortingAlgorithms.BubbleSort(array, false);
+            var ascArray = SortingAlgorithms.InsertationSort(array);
+            var descArray = SortingAlgorithms.InsertationSort(array, false);
 
             Console.WriteLine(string.Join(",", ascArray));
             Console.WriteLine(string.Join(",", descArray));
